@@ -1,0 +1,9 @@
+---
+- name: Setup Alpine Linux for DevOps lab
+  hosts: alpine
+  become: true
+
+  roles:
+    - common
+    - docker
+    - security

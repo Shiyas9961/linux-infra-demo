@@ -1,0 +1,28 @@
+---
+- name: Make sure wheel group exists
+  group:
+    name: wheel
+    state: present
+
+- name: Add user to wheel group
+  user:
+    name: "{{ ansible_user }}"
+    groups: wheel
+    append: true
+
+- name: Allow wheel group to use sudo
+  lineinfile:
+    path: /etc/sudoers
+    regexp: '^#?%wheel ALL=\(ALL:ALL\) ALL'
+    line: '%wheel ALL=(ALL:ALL) ALL'
+    validate: 'visudo -cf %s'
+
+- name: Enable sshd on boot
+  service:
+    name: sshd
+    enabled: true
+
+- name: Start sshd
+  service:
+    name: sshd
+    state: started

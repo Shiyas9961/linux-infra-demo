@@ -1,0 +1,22 @@
+---
+- name: Install Docker packages
+  apk:
+    name: "{{ docker_packages }}"
+    state: present
+
+- name: Enable Docker service on boot
+  service:
+    name: docker
+    enabled: true
+
+- name: Start Docker service
+  service:
+    name: docker
+    state: started
+
+
+- name: Add user to docker group
+  user:
+    name: "{{ docker_user }}"
+    groups: docker
+    append: true

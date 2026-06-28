@@ -1,0 +1,26 @@
+timezone: Asia/Kolkata
+
+common_packages:
+  - bash
+  - curl
+  - wget
+  - git
+  - vim
+  - nano
+  - htop
+  - tree
+  - openssh
+  - sudo
+  - ca-certificates
+  - shadow
+  - iproute2
+  - net-tools
+  - bind-tools
+  - tzdata
+
+docker_packages:
+  - docker
+  - docker-cli
+  - docker-compose
+
+docker_user: shiyas
