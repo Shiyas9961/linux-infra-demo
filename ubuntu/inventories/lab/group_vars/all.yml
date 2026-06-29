@@ -1,0 +1,27 @@
+timezone: Asia/Kolkata
+
+common_packages:
+  - curl
+  - wget
+  - git
+  - vim
+  - nano
+  - unzip
+  - zip
+  - tree
+  - htop
+  - jq
+  - net-tools
+  - iproute2
+  - dnsutils
+  - traceroute
+  - tcpdump
+  - rsync
+  - ca-certificates
+  - gnupg
+  - lsb-release
+  - software-properties-common
+  - apt-transport-https
+  - openssh-server
+
+docker_user: shiyas

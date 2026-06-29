@@ -1,0 +1,8 @@
+---
+- name: Setup Ubuntu DevOps VM
+  hosts: ubuntu
+  become: true
+
+  roles:
+    - common
+    - docker
